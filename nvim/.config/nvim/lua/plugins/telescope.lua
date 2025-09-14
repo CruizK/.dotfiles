@@ -14,13 +14,42 @@ return {
         ignore_patterns[i] = pattern:gsub("/", "\\")
       end
     end
+
+    local rg_globs = {
+      "--glob=!**/.git/*",
+      "--glob=!**/.idea/*",
+      "--glob=!**/.vscode/*",
+      "--glob=!**/build/*",
+      "--glob=!**/dist/*",
+      "--glob=!**/.oh-my-zsh/*",
+      "--glob=!**/.tmux/*",
+    }
+
     require('telescope').setup {
       defaults = {
-        file_ignore_patterns = ignore_patterns
+        file_ignore_patterns = ignore_patterns,
+        vimgrep_arguments = {
+          "rg",
+          "--follow",
+          "--hidden",
+          "--no-heading",
+          "--with-filename",
+          "--line-number",
+          "--column",
+          "--smart-case",
+          table.unpack(rg_globs),
+        },
       },
       pickers = {
         find_files = {
-          theme = "ivy"
+          hidden = true,
+          theme = "ivy",
+          find_command = {
+            "rg",
+            "--files",
+            "--hidden",
+            table.unpack(rg_globs)
+          }
         }
       },
       extensions = {
