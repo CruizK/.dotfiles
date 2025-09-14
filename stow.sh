@@ -1,3 +1,6 @@
-stow nvim -t ~
-stow tmux -t ~
-stow zsh -t ~
+for dir in *; do
+    if [ -d "$dir" ]; then
+        echo "Stowing $dir"
+        stow "$dir" -t ~
+    fi
+done
