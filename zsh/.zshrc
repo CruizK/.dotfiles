@@ -45,9 +45,6 @@ function editdir() {
 # Aliases
 alias zs="source ~/.zshrc"
 alias python="python3"
-alias erc="$EDITOR ~/.zshrc"
-alias envim="editdir ~/.config/nvim"
-alias envimdata="editdir ~/.local/share/nvim"
 alias ls="eza -l -g --icons --git"
 alias lst="eza -1 --icons --tree --git-ignore"
 alias vi="nvim"
