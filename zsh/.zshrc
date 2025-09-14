@@ -26,11 +26,10 @@ fi
 # Exports
 export EDITOR='nvim'
 export SNOWFLAKE_PRIVATE_KEY="$(cat ~/dev/rsa_key.p8)"
-export PATH="/home/cruizk/.local/bin:$PATH"
-export PATH=/home/cruizk/bin:$PATH
-export PATH=/home/cruizk/.config/bin:$PATH
-export PATH=/home/cruizk/zig14:$PATH
-export PATH=/home/cruizk/dev/apip-gatewaycli/bin:$PATH
+export PATH="$HOME/.local/bin:$PATH"
+export PATH=$HOME/bin:$PATH
+export PATH=$HOME/.config/bin:$PATH
+export PATH=$HOME/zig14:$PATH
 
 # zoxide
 eval "$(zoxide init zsh)"
@@ -54,9 +53,9 @@ alias vim="nvim"
 bindkey -s ^f "tmux-sessionizer\n"
 
 # fnm
-FNM_PATH="/home/cruizk/.local/share/fnm"
+FNM_PATH="$HOME/.local/share/fnm"
 if [ -d "$FNM_PATH" ]; then
-  export PATH="/home/cruizk/.local/share/fnm:$PATH"
+  export PATH="$HOME/.local/share/fnm:$PATH"
   eval "`fnm env`"
 fi
 
