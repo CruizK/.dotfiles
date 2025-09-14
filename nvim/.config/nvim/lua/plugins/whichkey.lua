@@ -2,7 +2,7 @@ return {
   "folke/which-key.nvim",
   event = "VeryLazy",
   opts = {},
-  enabled = false,
+  enabled = false, -- Disabled due to visual mode bug
   keys = {
     {
       "<leader>?",
