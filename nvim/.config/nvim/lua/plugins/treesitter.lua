@@ -20,7 +20,8 @@ return {
           "c_sharp",
           "astro",
           "javascript",
-          "typescript"
+          "typescript",
+          "qmljs"
         },
         auto_install = false,
         indent = {
