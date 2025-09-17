@@ -20,7 +20,16 @@ return {
     config = function()
       require("mason").setup()
       require("mason-lspconfig").setup {
-        ensure_installed = { "lua_ls", "clangd", "pyright", "zls" },
+        ensure_installed = {
+          "lua_ls",
+          "clangd",
+          "pyright",
+          "zls",
+          "astro",
+          "ts_ls",
+          "cssls",
+          "qmlls"
+        },
       }
       local capabilities = require('blink.cmp').get_lsp_capabilities()
       vim.g.zig_fmt_parse_errors = 0
