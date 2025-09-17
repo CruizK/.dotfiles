@@ -1,14 +1,6 @@
 # ZSH Configurations
 export ZSH_DISABLE_COMPFIX="true"
 
-# Setup oh-my-zsh if not already installed
-if [ ! -d $HOME/.oh-my-zsh ]; then
-  git clone https://github.com/ohmyzsh/ohmyzsh.git $HOME/.oh-my-zsh
-  git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
-  git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
-  git clone --depth=1 https://github.com/romkatv/powerlevel10k.git "${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k"
-fi
-
 export ZSH="$HOME/.oh-my-zsh"
 ZSH_THEME="powerlevel10k/powerlevel10k"
 plugins=(git fzf zsh-autosuggestions zsh-syntax-highlighting)
