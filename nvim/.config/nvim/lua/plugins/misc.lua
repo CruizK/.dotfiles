@@ -1,7 +1,15 @@
 return {
   'tpope/vim-sleuth',
   'j-hui/fidget.nvim',
-  'github/copilot.vim',
+  {
+    'github/copilot.vim',
+    config = function()
+      vim.api.nvim_set_keymap("i", "<C-J>", 'copilot#Accept("\\<CR>")', {
+        replace_keycodes = false, expr = true
+      })
+      vim.g.copilot_no_tab_map = true
+    end
+  },
   {
     'windwp/nvim-autopairs',
     event = "InsertEnter",
